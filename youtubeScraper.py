@@ -14,20 +14,17 @@ def data():
     ytUrl = request.args.get('url')
 
     html = r.get(ytUrl).content
-    # Get just the tittle
-    tittle = BeautifulSoup(html, "html.parser").find('title')
-    tittle = str(tittle)
-
+    # Get just the title
+    title = str(BeautifulSoup(html, "html.parser").find('title'))
     # Check if the Youtube channel exist
-    if tittle == "<title>404 Not Found</title>":
+    if title == "<title>404 Not Found</title>" or title == "<title>YouTube</title>" or title == "None":
         return jsonify("Error, youtube channel doesn't exist")
     else:
         #Get the script tag with all the data ([9] looks well)
-        scriptGetter = BeautifulSoup(html, "html.parser").findAll('script', attrs={'nonce': re.compile('[\w\W]+')})[32]
+        scriptGetter = str(BeautifulSoup(html, "html.parser").findAll('script', attrs={'nonce': re.compile('[\w\W]+')})[32])
 
-        scriptToText = str(scriptGetter)
         #Get just the obj
-        obj = re.split(r"<script nonce=\"(?:[^\"]+)\">var ytInitialData = ({.+});<\/script>", scriptToText)[1]
+        obj = re.split(r"<script nonce=\"(?:[^\"]+)\">var ytInitialData = ({.+});<\/script>", scriptGetter)[1]
         jsonData = json.loads(obj)
 
         metadada = jsonData['metadata']['channelMetadataRenderer']
