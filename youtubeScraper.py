@@ -23,13 +23,11 @@ def data():
         return jsonify("Error, youtube channel doesn't exist")
     else:
         #Get the script tag with all the data ([9] looks well)
-        scriptGetter = BeautifulSoup(html, "html.parser").findAll(
-            'script', attrs={'nonce': re.compile('[\w\W]+')})[32]
+        scriptGetter = BeautifulSoup(html, "html.parser").findAll('script', attrs={'nonce': re.compile('[\w\W]+')})[32]
 
         scriptToText = str(scriptGetter)
         #Get just the obj
-        obj = re.split(
-            r"<script nonce=\"(?:[^\"]+)\">var ytInitialData = ({.+});<\/script>", scriptToText)[1]
+        obj = re.split(r"<script nonce=\"(?:[^\"]+)\">var ytInitialData = ({.+});<\/script>", scriptToText)[1]
         jsonData = json.loads(obj)
 
         myData = {
