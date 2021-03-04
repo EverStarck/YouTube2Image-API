@@ -30,16 +30,18 @@ def data():
         obj = re.split(r"<script nonce=\"(?:[^\"]+)\">var ytInitialData = ({.+});<\/script>", scriptToText)[1]
         jsonData = json.loads(obj)
 
+        metadada = jsonData['metadata']['channelMetadataRenderer']
+        header = jsonData['header']['c4TabbedHeaderRenderer']
         myData = {
-            "banner": jsonData['header']['c4TabbedHeaderRenderer']['tvBanner']['thumbnails'],
-            "avatar": jsonData['metadata']['channelMetadataRenderer']['avatar']['thumbnails'],
-            "channelUrl": jsonData['metadata']['channelMetadataRenderer']['channelUrl'],
+            "banner": header['tvBanner']['thumbnails'],
+            "avatar": metadada['avatar']['thumbnails'],
+            "channelUrl": metadada['channelUrl'],
             "channelInfo": {
-                "subs": jsonData['header']['c4TabbedHeaderRenderer']['subscriberCountText']['simpleText'],
-                "title:": jsonData['metadata']['channelMetadataRenderer']['title'],
-                "description": jsonData['metadata']['channelMetadataRenderer']['description'],
-                "keywords": jsonData['metadata']['channelMetadataRenderer']['keywords'],
-                "isFamilySafe": jsonData['metadata']['channelMetadataRenderer']['isFamilySafe'],
+                "subs": header['subscriberCountText']['simpleText'],
+                "title:": metadada['title'],
+                "description": metadada['description'],
+                "keywords": metadada['keywords'],
+                "isFamilySafe": metadada['isFamilySafe'],
             }
         }
 
