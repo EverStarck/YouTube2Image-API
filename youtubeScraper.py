@@ -36,18 +36,30 @@ def data():
         jsonData = json.loads(obj)
 
         #Pass the data to own object
-        metadada = jsonData['metadata']['channelMetadataRenderer']
+        metadata = jsonData['metadata']['channelMetadataRenderer']
         header = jsonData['header']['c4TabbedHeaderRenderer']
+
+        #Check if the channel has banner
+        if not header.get("tvBanner"):
+            banner = [{
+                "height":1060,
+                "url": "http://s.ytimg.com/yts/img/channels/c4/default_banner-vflYp0HrA.jpg",
+                "width":175,
+            }]
+
+        else:
+            banner = header['tvBanner']['thumbnails']
+
         myData = {
-            "banner": header['tvBanner']['thumbnails'],
-            "avatar": metadada['avatar']['thumbnails'],
-            "channelUrl": metadada['channelUrl'],
+            "banner": banner,
+            "avatar": metadata['avatar']['thumbnails'],
+            "channelUrl": metadata['channelUrl'],
             "channelInfo": {
                 "subs": header['subscriberCountText']['simpleText'],
-                "title:": metadada['title'],
-                "description": metadada['description'],
-                "keywords": metadada['keywords'],
-                "isFamilySafe": metadada['isFamilySafe'],
+                "title:": metadata['title'],
+                "description": metadata['description'],
+                "keywords": metadata['keywords'],
+                "isFamilySafe": metadata['isFamilySafe'],
             }
         }
 
