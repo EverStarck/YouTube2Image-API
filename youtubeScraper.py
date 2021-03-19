@@ -3,10 +3,12 @@ import re
 import json
 from bs4 import BeautifulSoup
 from flask import Flask, jsonify, request
-import time
+from flask_cors import CORS
+# import time
 
 headers = {'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'}
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/info')
 def data():
@@ -56,7 +58,7 @@ def data():
             "channelUrl": metadata['channelUrl'],
             "channelInfo": {
                 "subs": header['subscriberCountText']['simpleText'],
-                "title:": metadata['title'],
+                "title": metadata['title'],
                 "description": metadata['description'],
                 "keywords": metadata['keywords'],
                 "isFamilySafe": metadata['isFamilySafe'],
