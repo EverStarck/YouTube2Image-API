@@ -43,11 +43,7 @@ def data():
 
         #Check if the channel has banner
         if not header.get("tvBanner"):
-            banner = [{
-                "height":1060,
-                "url": "http://s.ytimg.com/yts/img/channels/c4/default_banner-vflYp0HrA.jpg",
-                "width":175,
-            }]
+            banner = [{"height":1080,"url":"https://yt3.ggpht.com/p4M29lzrGdPQF_fBH1I1R9p_8Kjgjbnhm7orCzCO23Nxk-Hyv1dV01fzjWEQSljASvTjk6ez=w1920-fcrop64=1,00000000ffffffff-k-c0xffffffff-no-nd-rj","width":1920}]
 
         else:
             banner = header['tvBanner']['thumbnails']
