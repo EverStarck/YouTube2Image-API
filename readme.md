@@ -1,40 +1,81 @@
-# Youtube basic info scraper
+![Twitter Follow](https://img.shields.io/twitter/follow/EverStarck?style=social)
 
-_Acá va un párrafo que describa lo que es el proyecto_
+<!-- PROJECT LOGO -->
+<hr />
+<br />
+<p align="center">
+  <a href="https://yt2img.everstarck.com">
+    <img src="readme/images/logo.svg" alt="Logo" width="94" height="67">
+  </a>
 
-## Comenzando 🚀
+  <h2 align="center">YouTube2Image-API</h2>
+  <p align="center">
+    Know how to deploy the API for YouTube2Image
+    <br />
+    <br />
+    <a href="https://yt2img.everstarck.com">Visit site</a>
+    ·
+    <a href="https://github.com/EverStarck/YouTube2Image-API/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/EverStarck/YouTube2Image-API/issues">Request Feature</a>
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+  </p>
+</p>
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+<!-- ABOUT THE PROJECT -->
+<br />
 
+## About yt2img
 
-### Pre-requisitos 📋
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+✅ Is your YouTube channel FAMILY FRIENDLY? Discover it and download your Banner and Avatar from your channel with just one click
 
-```
-Da un ejemplo
-```
+<!-- GETTING STARTED -->
 
-### Instalación 🔧
+## Getting Started
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
+It's make deploy this API. You only need to install al the requirements
 
-_Dí cómo será ese paso_
+- pip
+  ```sh
+  pip install -r requirements.txt
+  ```
 
-```
-Da un ejemplo
-```
+### Deploy on Heroku
 
-_Y repite_
+1. Make an account in Heroku and install it
+2. Clone the repo
+   ```sh
+   git clone https://github.com/EverStarck/YouTube2Image-API.git
+   ```
+3. Create heroku app
+   ```sh
+   heroku create
+   ```
+4. Upload all to heroku origin
+   ```sh
+   git push heroku master
+   ```
 
-```
-hasta finalizar
-```
+## Contributing
 
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## Ejecutando las pruebas ⚙️
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-_k le valga verga vato 👍_
+<!-- CONTACT -->
+
+## Contact
+
+[@EverStarck](https://twitter.com/EverStarck)
+
+[https://github.com/EverStarck/YouTube2Image](https://github.com/EverStarck/YouTube2Image)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[product-screenshot]: readme/images/yt2image.png
