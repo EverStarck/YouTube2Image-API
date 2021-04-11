@@ -27,7 +27,7 @@
 
 ## About yt2img
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![ScreenShot of youtube to image project][product-screenshot]](https://yt2img.everstarck.com)
 
 ✅ Is your YouTube channel FAMILY FRIENDLY? Discover it and download your Banner and Avatar from your channel with just one click
 
@@ -74,7 +74,7 @@ Contributions are what make the open source community such an amazing place to b
 
 [@EverStarck](https://twitter.com/EverStarck)
 
-[https://github.com/EverStarck/YouTube2Image](https://github.com/EverStarck/YouTube2Image)
+[https://github.com/EverStarck/YouTube2Image-API](https://github.com/EverStarck/YouTube2Image-API)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
